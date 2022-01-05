@@ -9,10 +9,11 @@ namespace ToDoList.Client
     {
         public void DrawGroupsTree(List<Group> groups)
         { 
-            var root = new Tree("Groups");
+            var root = new Tree("Groups").Style("red");
             foreach (var group in groups)
             {
                 var newTable = new Table()
+                    .Title(group.Name)
                     .Border(TableBorder.Rounded)
                     .Expand()
                     .AddColumns("Id", "Task", "Creation Time", "DeadLine", "Completed", "SubTasks");
@@ -32,9 +33,9 @@ namespace ToDoList.Client
                         }
                     }
                     newTable.AddRow(
-                        new Markup(task.Id),
+                        new Markup($"[yellow1]{task.Id}[/]"),
                         new Markup(task.TaskInfo),
-                        new Markup(task.CreationTime.ToShortDateString()),
+                        new Markup($"[paleturquoise1]{task.CreationTime.ToShortDateString()}[/]"),
                         new Markup($"{(task.DeadLine == default ? " " : task.DeadLine.ToShortDateString()) }"),
                         new Markup($"{(task.Completed ? "[darkcyan]True[/]" : "[red1]False[/]") }"),
                         subTaskTable);

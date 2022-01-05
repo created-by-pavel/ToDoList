@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using ToDoList.Client;
+using ToDoList.Services;
 
 namespace ToDoList
 {
@@ -8,7 +9,9 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            var console = new ConsoleCommands();
+            IToDoListService service = new ToDoListService();
+            var drawing = new Drawing();
+            var console = new ConsoleCommands(service, drawing);
             console.Run();
         }
     }

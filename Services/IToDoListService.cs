@@ -11,8 +11,8 @@ namespace ToDoList.Services
         public Task AddTask(string taskInfo);
         public List<Task> GetTasksNotInGroup();
         public void DeleteTaskById(string taskId);
-        public void Save();
-        public void Load();
+        public void Save(string directoryPath = null);
+        public void Load(string directoryPath = null);
         public void DoComplete(string id);
         public List<Task> GetAllCompletedTasks();
         public void AddDeadLine(string taskId, DateTime deadLine);

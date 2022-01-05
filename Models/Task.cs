@@ -20,5 +20,16 @@ namespace ToDoList.Models
         public DateTime CreationTime { get; }
         public DateTime DeadLine { get; set; }
         public List<SubTask> SubTasks { get; } = new ();
+
+        public void DoComplete(string id)
+        {
+            if (Id == id)
+            {
+                Completed = true;
+                return;
+            }
+            var subTask = SubTasks.Find(s => s.Id == id);
+            if (subTask != null) subTask.Completed = true;
+        }
     }
 }
