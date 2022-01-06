@@ -23,3 +23,4 @@ Implement an application that handles commands:
 - [X] Missing files, incorrect input format.
 - [X] Corner cases (e.g. one task cannot be added twice).
 - #### An example of working
+![example](https://github.com/created-by-pavel/ToDoList/blob/main/Screenshots/Снимок%20экрана%202022-01-06%20в%2011.11.24.png)
